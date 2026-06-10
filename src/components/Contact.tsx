@@ -21,7 +21,7 @@ const Contact = () => {
     // Web3Forms integration - To receive real emails to fferike027@gmail.com:
     // 1. Go to https://web3forms.com/ and claim your free Access Key.
     // 2. Paste your Access Key below replacing "YOUR_ACCESS_KEY_HERE".
-    const WEB3FORMS_ACCESS_KEY = "YOUR_ACCESS_KEY_HERE";
+    const WEB3FORMS_ACCESS_KEY = "f69ef3ed-f1d4-45f5-9baf-f78368eb2029";
 
     const formDataObj = new FormData();
     formDataObj.append("access_key", WEB3FORMS_ACCESS_KEY);
