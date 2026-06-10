@@ -29,7 +29,7 @@ const Navbar = () => {
       <div className="container nav-container">
         <a href="#home" className="nav-logo">
           <Droplet className="logo-icon" size={28} />
-          <span>Aqua</span>Farm
+          <span>Szántóföldi</span>Öntözés
         </a>
 
         {/* Desktop Menu */}

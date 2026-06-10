@@ -15,7 +15,7 @@ const Footer = () => {
         <div className="footer-brand">
           <a href="#home" className="footer-logo">
             <Droplet className="logo-icon" size={26} />
-            <span>Aqua</span>Farm
+            <span>Szántóföldi</span>Öntözés
           </a>
           <p className="footer-desc">
             Precíziós mezőgazdasági és szántóföldi öntözőrendszerek tervezése és kivitelezése. Fenntartható vízgazdálkodás, termékenyebb jövő.
@@ -67,7 +67,7 @@ const Footer = () => {
       <div className="footer-bottom">
         <div className="container footer-bottom-container">
           <p className="copyright">
-            &copy; {new Date().getFullYear()} AquaFarm. Minden jog fenntartva.
+            &copy; {new Date().getFullYear()} szantofoldiontozes.hu. Minden jog fenntartva.
           </p>
           <button onClick={handleScrollToTop} className="btn-scroll-top" aria-label="Vissza a lap tetejére">
             <ArrowUp size={20} />
