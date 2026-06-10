@@ -13,7 +13,7 @@ const Hero = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <span className="hero-badge">Smart Agricultural Solutions</span>
+          <span className="hero-badge">Intelligens Mezőgazdasági Megoldások</span>
           <h1 className="hero-title">
             Intelligens öntözés <br />
             <span>a fenntartható jövőért</span>
@@ -59,7 +59,7 @@ const Hero = () => {
           transition={{ duration: 1 }}
         >
           <div className="image-wrapper">
-             <img src={heroImg} alt="Smart crop field irrigation system" className="hero-img-actual" />
+             <img src={heroImg} alt="Intelligens szántóföldi öntözőrendszer" className="hero-img-actual" />
              <div className="hero-shape-decorator"></div>
           </div>
         </motion.div>
