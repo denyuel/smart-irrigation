@@ -16,7 +16,7 @@ interface CalculatorProps {
 }
 
 const Calculator = ({ onQuoteRequest }: CalculatorProps) => {
-  const [area, setArea] = useState<number>(500);
+  const [area, setArea] = useState<number>(10);
   const [plantType, setPlantType] = useState<string>('vegetables');
   const [soilType, setSoilType] = useState<string>('loam');
   const [result, setResult] = useState<CalculationResult | null>(null);
@@ -61,13 +61,15 @@ const Calculator = ({ onQuoteRequest }: CalculatorProps) => {
         break;
     }
 
-    const waterLiters = Math.round(area * plantFactor * soilMultiplier);
+    // area is in hectares (ha), convert to sqm for liter calculation: 1 ha = 10,000 sqm
+    const areaSqm = area * 10000;
+    const waterLiters = Math.round(areaSqm * plantFactor * soilMultiplier);
     const waterCubicMeters = parseFloat((waterLiters / 1000).toFixed(2));
     
-    // Duration estimation: assume average flow rate of 15 Liters/minute for small/medium grid system
-    // Scaled with area size.
-    const systemFlowPerSqm = 0.05; // 0.05 L/min per sqm
-    const totalSystemFlow = Math.max(15, area * systemFlowPerSqm);
+    // Duration estimation for large-scale agricultural pivot/linear systems:
+    // Assume average pivot flow rate of 70 Liters/minute per hectare (approx 7.0 L/s for 6 ha)
+    const systemFlowPerHectare = 70; 
+    const totalSystemFlow = area * systemFlowPerHectare; // Liters per minute
     const durationMinutes = Math.round(waterLiters / totalSystemFlow);
 
     setResult({
@@ -84,7 +86,7 @@ const Calculator = ({ onQuoteRequest }: CalculatorProps) => {
   }, [area, plantType, soilType]);
 
   const handleReset = () => {
-    setArea(500);
+    setArea(10);
     setPlantType('vegetables');
     setSoilType('loam');
   };
@@ -101,7 +103,7 @@ const Calculator = ({ onQuoteRequest }: CalculatorProps) => {
       clay: 'Agyagos talaj (kötött, nehéz)'
     };
 
-    const messageText = `Tisztelt Szántóföldi Öntözés! Érdeklődöm a kalkulátorban megadott paraméterek (Terület: ${area} m², Kultúra: ${plantNames[plantType] || plantType}, Talaj: ${soilNames[soilType] || soilType}) szerinti öntözőrendszer megvalósíthatóságával és árával kapcsolatban. Kérem, vegyék fel velem a kapcsolatot.`;
+    const messageText = `Tisztelt Szántóföldi Öntözés! Érdeklődöm a kalkulátorban megadott paraméterek (Terület: ${area} hektár, Kultúra: ${plantNames[plantType] || plantType}, Talaj: ${soilNames[soilType] || soilType}) szerinti öntözőrendszer megvalósíthatóságával és árával kapcsolatban. Kérem, vegyék fel velem a kapcsolatot.`;
     
     onQuoteRequest(messageText);
   };
@@ -128,22 +130,22 @@ const Calculator = ({ onQuoteRequest }: CalculatorProps) => {
             
             <div className="input-group">
               <label htmlFor="area-input" className="input-label">
-                Terület mérete (m²): <span className="highlight-value">{area} m²</span>
+                Terület mérete (hektár): <span className="highlight-value">{area} ha</span>
               </label>
               <input
                 id="area-input"
                 type="range"
-                min="10"
-                max="10000"
-                step="10"
+                min="1"
+                max="100"
+                step="1"
                 value={area}
                 onChange={(e) => setArea(Number(e.target.value))}
                 className="range-slider"
               />
               <div className="range-limits">
-                <span>10 m²</span>
-                <span>5 000 m²</span>
-                <span>10 000 m²</span>
+                <span>1 ha</span>
+                <span>50 ha</span>
+                <span>100 ha</span>
               </div>
             </div>
 
