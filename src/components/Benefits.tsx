@@ -21,7 +21,7 @@ const benefits = [
   {
     icon: <Heart size={28} />,
     title: 'Növény- és talajegészség',
-    description: 'A lassú és célzott csepegtetés megakadályozza a talajeróziót és a tápanyagok kimosódását, miközben ideális mikroklímát teremt.'
+    description: 'A precíz és egyenletes vízkijuttatás megakadályozza a talajeróziót, elősegíti a mély beszivárgást és biztosítja a növények fejlődését.'
   }
 ];
 
@@ -41,7 +41,7 @@ const Benefits = () => {
             <span className="benefits-badge">Miért válasszon minket?</span>
             <h2 className="section-title text-left">A professzionális öntözés <span>valódi előnyei</span></h2>
             <p className="benefits-pitch">
-              A modern földművelés és kertészet elképzelhetetlen mérnöki pontossággal megtervezett öntözés nélkül. Rendszereinkkel vizet, időt és energiát spórol meg.
+              A modern szántóföldi gazdálkodás elképzelhetetlen mérnöki pontossággal megtervezett öntözőrendszerek nélkül. Rendszereinkkel vizet, időt és energiát spórol meg.
             </p>
             <div className="benefits-stat-box glass">
               <span className="stat-num">-40%</span>

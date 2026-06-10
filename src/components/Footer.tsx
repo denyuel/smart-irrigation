@@ -15,7 +15,7 @@ const Footer = () => {
         <div className="footer-brand">
           <a href="#home" className="footer-logo">
             <Droplet className="logo-icon" size={26} />
-            <span>Szántóföldi</span>Öntözés
+            <span>Szántóföldi</span> Öntözés
           </a>
           <p className="footer-desc">
             Precíziós mezőgazdasági és szántóföldi öntözőrendszerek tervezése és kivitelezése. Fenntartható vízgazdálkodás, termékenyebb jövő.
@@ -47,10 +47,9 @@ const Footer = () => {
           <div className="footer-links-col">
             <h4>Szolgáltatások</h4>
             <ul>
-              <li><a href="#services">Szántóföldi öntözés</a></li>
-              <li><a href="#services">Csepegtető rendszerek</a></li>
-              <li><a href="#services">Mikro-szórófejek</a></li>
-              <li><a href="#services">IoT automatizálás</a></li>
+              <li><a href="#services">Körforgó Pivot Rendszerek</a></li>
+              <li><a href="#services">Lineáris Öntözőrendszerek</a></li>
+              <li><a href="#services">Okos vezérlés & IoT</a></li>
             </ul>
           </div>
 

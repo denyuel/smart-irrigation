@@ -27,10 +27,6 @@ const Calculator = () => {
         plantFactor = 4.5;
         method = 'Csepegtető öntözés (soros elrendezés)';
         break;
-      case 'orchard':
-        plantFactor = 3.0;
-        method = 'Csepegtető vagy Mikro-szórófejes öntözés';
-        break;
       case 'grains':
         plantFactor = 2.5;
         method = 'Nagy hatótávolságú esőztető (pivot/lineár)';
@@ -139,7 +135,6 @@ const Calculator = () => {
                 className="select-input"
               >
                 <option value="vegetables">Szántóföldi zöldségkultúrák</option>
-                <option value="orchard">Gyümölcsös / Szőlőültetvény</option>
                 <option value="grains">Szántóföldi gabona & kukorica</option>
               </select>
             </div>

@@ -53,7 +53,7 @@ const Services = () => {
         >
           <h2 className="section-title">Profi <span>Öntözési Megoldások</span></h2>
           <p className="section-subtitle">
-            A legújabb technológiákat alkalmazzuk, hogy minden szántóföldön és gyümölcsösben a legoptimálisabb vízkijuttatást biztosítsuk.
+            A legújabb technológiákat alkalmazzuk, hogy minden szántóföldön a legoptimálisabb vízkijuttatást biztosítsuk.
           </p>
         </motion.div>
 

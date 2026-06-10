@@ -181,7 +181,6 @@ const Contact = () => {
                   onChange={handleInputChange}
                 >
                   <option value="agriculture">Szántóföldi körforgó & lineáris esőztető öntözés</option>
-                  <option value="orchard">Gyümölcsös / Szőlő csepegtető öntözés</option>
                   <option value="automation">Okos vezérlés & automatizálás</option>
                   <option value="other">Egyéb / Egyedi tanácsadás</option>
                 </select>
