@@ -28,10 +28,11 @@
   align-items: center;
   gap: 8px;
   font-family: var(--font-heading);
-  font-size: 1.6rem;
+  font-size: 1.45rem;
   font-weight: 800;
   color: var(--clr-primary);
   letter-spacing: -0.02em;
+  white-space: nowrap;
 }
 
 .nav-logo span {
@@ -51,7 +52,7 @@
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 20px;
 }
 
 .nav-link {
@@ -108,7 +109,7 @@
   display: none;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1200px) {
   .nav-links {
     display: none;
   }

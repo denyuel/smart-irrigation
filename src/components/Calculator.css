@@ -271,3 +271,42 @@
     padding: 32px;
   }
 }
+
+@media (max-width: 480px) {
+  .calculator-inputs, .calculator-results {
+    padding: 24px 16px;
+  }
+  
+  .result-metric {
+    padding: 16px;
+    gap: 12px;
+  }
+  
+  .metric-icon-wrapper {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+  }
+  
+  .metric-icon-wrapper svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .metric-value {
+    font-size: 1.4rem;
+  }
+  
+  .calc-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .input-label {
+    font-size: 0.88rem;
+  }
+  
+  .select-input {
+    font-size: 0.88rem;
+    padding: 10px 12px;
+  }
+}

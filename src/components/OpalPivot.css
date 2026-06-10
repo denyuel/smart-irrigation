@@ -170,3 +170,22 @@
     margin: 0 auto;
   }
 }
+
+@media (max-width: 768px) {
+  .pivot-title {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pivot-title {
+    font-size: 1.8rem;
+  }
+  
+  .pivot-accent-badge {
+    bottom: 12px;
+    left: 12px;
+    padding: 6px 12px;
+    font-size: 0.75rem;
+  }
+}

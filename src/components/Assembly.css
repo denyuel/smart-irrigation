@@ -157,3 +157,32 @@
     order: -1; /* Display image on top on mobile */
   }
 }
+
+@media (max-width: 768px) {
+  .assembly-title {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .assembly-title {
+    font-size: 1.8rem;
+  }
+  
+  .assembly-accent-badge {
+    bottom: 12px;
+    right: 12px;
+    padding: 6px 12px;
+    font-size: 0.75rem;
+  }
+  
+  .assembly-step-item {
+    gap: 12px;
+  }
+  
+  .assembly-step-number {
+    width: 30px;
+    height: 30px;
+    font-size: 0.9rem;
+  }
+}
