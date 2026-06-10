@@ -13,27 +13,23 @@ interface CalculationResult {
 
 const Calculator = () => {
   const [area, setArea] = useState<number>(500);
-  const [plantType, setPlantType] = useState<string>('lawn');
+  const [plantType, setPlantType] = useState<string>('vegetables');
   const [soilType, setSoilType] = useState<string>('loam');
   const [result, setResult] = useState<CalculationResult | null>(null);
 
   const calculateWaterNeeds = () => {
     // Water baseline (liters per sqm per day in peak summer)
-    let plantFactor = 5; // lawn
-    let method = 'Mikro-szórófejes vagy Esőztető';
+    let plantFactor = 4.5; // vegetables
+    let method = 'Csepegtető öntözés';
     
     switch (plantType) {
-      case 'lawn':
-        plantFactor = 5.0;
-        method = 'Esőztető (rotoros vagy spray szórófejek)';
-        break;
       case 'vegetables':
         plantFactor = 4.5;
         method = 'Csepegtető öntözés (soros elrendezés)';
         break;
       case 'orchard':
         plantFactor = 3.0;
-        method = 'Csepegtető vagy Mikro-szórófejes';
+        method = 'Csepegtető vagy Mikro-szórófejes öntözés';
         break;
       case 'grains':
         plantFactor = 2.5;
@@ -89,7 +85,7 @@ const Calculator = () => {
 
   const handleReset = () => {
     setArea(500);
-    setPlantType('lawn');
+    setPlantType('vegetables');
     setSoilType('loam');
   };
 
@@ -104,7 +100,7 @@ const Calculator = () => {
         >
           <h2 className="section-title">Intelligens <span>Vízigény Kalkulátor</span></h2>
           <p className="section-subtitle">
-            Számolja ki földterülete vagy kertje becsült napi vízigényét a növénykultúra és a talajtípus alapján.
+            Számolja ki mezőgazdasági földterülete becsült napi vízigényét a növénykultúra és a talajtípus alapján.
           </p>
         </motion.div>
 
@@ -142,10 +138,9 @@ const Calculator = () => {
                 onChange={(e) => setPlantType(e.target.value)}
                 className="select-input"
               >
-                <option value="lawn">Pázsit / Gyep (Díszkert)</option>
-                <option value="vegetables">Zöldségeskert / Lágyszárúak</option>
+                <option value="vegetables">Szántóföldi zöldségkultúrák</option>
                 <option value="orchard">Gyümölcsös / Szőlőültetvény</option>
-                <option value="grains">Szántóföldi gabonafélék</option>
+                <option value="grains">Szántóföldi gabona & kukorica</option>
               </select>
             </div>
 

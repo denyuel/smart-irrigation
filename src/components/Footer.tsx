@@ -18,7 +18,7 @@ const Footer = () => {
             <span>Aqua</span>Farm
           </a>
           <p className="footer-desc">
-            Precíziós mezőgazdasági és kerti öntözőrendszerek tervezése és kivitelezése. Fenntartható vízgazdálkodás, zöldebb és termékenyebb jövő.
+            Precíziós mezőgazdasági és szántóföldi öntözőrendszerek tervezése és kivitelezése. Fenntartható vízgazdálkodás, termékenyebb jövő.
           </p>
           <div className="social-links">
             <a href="#" className="social-link" aria-label="Facebook">
@@ -57,9 +57,8 @@ const Footer = () => {
           <div className="footer-links-col">
             <h4>Kapcsolat</h4>
             <ul className="footer-contact-details">
-              <li>info@aquafarm.hu</li>
-              <li>+36 (30) 123-4567</li>
-              <li>1117 Budapest, Október huszonharmadika u. 8.</li>
+              <li>fferike027@gmail.com</li>
+              <li>06 30 507 5057</li>
             </ul>
           </div>
         </div>

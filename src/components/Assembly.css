@@ -1,0 +1,159 @@
+.assembly-section {
+  background-color: var(--clr-bg-alt);
+  border-bottom: 1px solid var(--clr-border);
+  overflow: hidden;
+}
+
+.assembly-container {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.assembly-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.assembly-tag {
+  display: inline-block;
+  padding: 6px 16px;
+  background: var(--clr-secondary-soft);
+  color: var(--clr-secondary);
+  border: 1px solid rgba(2, 136, 209, 0.15);
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.assembly-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+}
+
+.assembly-title span {
+  background: linear-gradient(135deg, var(--clr-accent) 0%, var(--clr-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.assembly-description {
+  font-size: 1.05rem;
+  color: var(--clr-text-light);
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.assembly-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.assembly-step-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.assembly-step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--clr-accent) 0%, var(--clr-secondary) 100%);
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(46, 125, 50, 0.15);
+}
+
+.assembly-step-text h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--clr-primary);
+  margin-bottom: 6px;
+}
+
+.assembly-step-text p {
+  font-size: 0.9rem;
+  color: var(--clr-text-light);
+  line-height: 1.5;
+}
+
+.assembly-image-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.assembly-img-border {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--clr-border);
+}
+
+.assembly-img-actual {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.assembly-img-border:hover .assembly-img-actual {
+  transform: scale(1.03);
+}
+
+.assembly-accent-badge {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: var(--clr-card-bg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--clr-border);
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--clr-secondary);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .assembly-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .assembly-content {
+    align-items: center;
+    text-align: center;
+  }
+  
+  .assembly-step-item {
+    text-align: left;
+  }
+  
+  .assembly-image-wrapper {
+    max-width: 550px;
+    margin: 0 auto;
+    order: -1; /* Display image on top on mobile */
+  }
+}

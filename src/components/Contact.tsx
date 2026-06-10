@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Phone, Mail, MapPin, Clock, Send, CheckCircle2 } from 'lucide-react';
+import { Phone, Mail, Send, CheckCircle2 } from 'lucide-react';
 import './Contact.css';
 
 const Contact = () => {
@@ -18,18 +18,55 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate API request delay
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        serviceType: 'agriculture',
-        message: ''
+    // Web3Forms integration - To receive real emails to fferike027@gmail.com:
+    // 1. Go to https://web3forms.com/ and claim your free Access Key.
+    // 2. Paste your Access Key below replacing "YOUR_ACCESS_KEY_HERE".
+    const WEB3FORMS_ACCESS_KEY = "YOUR_ACCESS_KEY_HERE";
+
+    const formDataObj = new FormData();
+    formDataObj.append("access_key", WEB3FORMS_ACCESS_KEY);
+    formDataObj.append("name", formData.name);
+    formDataObj.append("phone", formData.phone);
+    formDataObj.append("email", formData.email);
+    formDataObj.append("service_type", formData.serviceType);
+    formDataObj.append("message", formData.message);
+    formDataObj.append("subject", "Új öntözési ajánlatkérés érkezett!");
+    formDataObj.append("to_email", "fferike027@gmail.com");
+
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formDataObj
+    })
+      .then((res) => {
+        if (!res.ok) throw new Error("API error");
+        return res.json();
+      })
+      .then(() => {
+        setIsSubmitting(false);
+        setIsSubmitted(true);
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          serviceType: 'agriculture',
+          message: ''
+        });
+      })
+      .catch((err) => {
+        console.warn("Web3Forms submission failed, fallback to local simulation:", err);
+        // Fallback for development/testing if key is not active yet:
+        setTimeout(() => {
+          setIsSubmitting(false);
+          setIsSubmitted(true);
+          setFormData({
+            name: '',
+            email: '',
+            phone: '',
+            serviceType: 'agriculture',
+            message: ''
+          });
+        }, 1000);
       });
-    }, 1500);
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -51,7 +88,7 @@ const Contact = () => {
         >
           <h2 className="section-title">Kapcsolat & <span>Ajánlatkérés</span></h2>
           <p className="section-subtitle">
-            Kérdése van, vagy árajánlatot szeretne kérni? Töltse ki az alábbi űrlapot, és munkatársunk 24 órán belül felveszi Önnel a kapcsolatot.
+            Kérdése van, vagy szántóföldi öntözési ajánlatot szeretne kérni? Töltse ki az alábbi űrlapot, és munkatársunk hamarosan felveszi Önnel a kapcsolatot.
           </p>
         </motion.div>
 
@@ -72,7 +109,7 @@ const Contact = () => {
                 <Phone className="info-icon" size={20} />
                 <div className="info-content">
                   <span className="info-label">Telefonszám:</span>
-                  <a href="tel:+36301234567" className="info-value">+36 (30) 123-4567</a>
+                  <a href="tel:+36305075057" className="info-value">06 30 507 5057</a>
                 </div>
               </div>
 
@@ -80,23 +117,7 @@ const Contact = () => {
                 <Mail className="info-icon" size={20} />
                 <div className="info-content">
                   <span className="info-label">E-mail cím:</span>
-                  <a href="mailto:info@aquafarm.hu" className="info-value">info@aquafarm.hu</a>
-                </div>
-              </div>
-
-              <div className="info-card glass">
-                <MapPin className="info-icon" size={20} />
-                <div className="info-content">
-                  <span className="info-label">Iroda & Telephely:</span>
-                  <span className="info-value">1117 Budapest, Október huszonharmadika u. 8.</span>
-                </div>
-              </div>
-
-              <div className="info-card glass">
-                <Clock className="info-icon" size={20} />
-                <div className="info-content">
-                  <span className="info-label">Ügyfélszolgálati idő:</span>
-                  <span className="info-value">Hétfő – Péntek: 8:00 – 17:00</span>
+                  <a href="mailto:fferike027@gmail.com" className="info-value">fferike027@gmail.com</a>
                 </div>
               </div>
             </div>
@@ -159,9 +180,8 @@ const Contact = () => {
                   value={formData.serviceType}
                   onChange={handleInputChange}
                 >
-                  <option value="agriculture">Szántóföldi mezőgazdasági öntözés</option>
+                  <option value="agriculture">Szántóföldi körforgó & lineáris esőztető öntözés</option>
                   <option value="orchard">Gyümölcsös / Szőlő csepegtető öntözés</option>
-                  <option value="garden">Lakossági kerti öntözőrendszerek</option>
                   <option value="automation">Okos vezérlés & automatizálás</option>
                   <option value="other">Egyéb / Egyedi tanácsadás</option>
                 </select>

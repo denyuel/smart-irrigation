@@ -18,13 +18,13 @@ const services = [
   {
     icon: <Compass size={32} />,
     title: 'Mikro-szórófejes rendszerek',
-    description: 'Köztes megoldás az esőztető és a csepegtető öntözés között. Különösen alkalmas fóliasátrak, üvegházak és fiatal gyümölcsösök öntözésére.',
-    features: ['Finom cseppképzés', 'Páratartalom szabályozás', 'Fagyvédelem']
+    description: 'Finom permetezésű vízkijuttatás szántóföldi kultúrákhoz és gyümölcsösökbe, ahol a finom cseppképzés és az egyenletes talajnedvesség elengedhetetlen.',
+    features: ['Finom cseppképzés szántóföldön', 'Talajmenti fagyvédelem', 'Mikroklíma szabályozás']
   },
   {
     icon: <Cpu size={32} />,
     title: 'Okos vezérlés & IoT szenzorok',
-    description: 'Automatizálja öntözését talajnedvesség-mérők és helyi időjárás-előrejelzések alapján. Vezérelje rendszerét bárhonnan okostelefonnal.',
+    description: 'Automatizálja mezőgazdasági öntözését talajnedvesség-mérők és helyi időjárás-előrejelzések alapján. Vezérelje rendszerét bárhonnan mobilalkalmazással.',
     features: ['Mobilalkalmazásos elérés', 'Talajnedvesség-alapú indítás', 'Időjárás-követő algoritmusok']
   }
 ];
@@ -59,7 +59,7 @@ const Services = () => {
         >
           <h2 className="section-title">Profi <span>Öntözési Megoldások</span></h2>
           <p className="section-subtitle">
-            A legújabb technológiákat alkalmazzuk, hogy minden gazdaságban és kertben a legoptimálisabb vízkijuttatást biztosítsuk.
+            A legújabb technológiákat alkalmazzuk, hogy minden szántóföldön és gyümölcsösben a legoptimálisabb vízkijuttatást biztosítsuk.
           </p>
         </motion.div>
 

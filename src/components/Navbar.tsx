@@ -17,7 +17,9 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Kezdőlap', href: '#home' },
     { name: 'Szolgáltatások', href: '#services' },
-    { name: 'Vízigény Kalkulátor', href: '#calculator' },
+    { name: 'Opal Pivot', href: '#opal-pivot' },
+    { name: 'Összeszerelés', href: '#assembly' },
+    { name: 'Kalkulátor', href: '#calculator' },
     { name: 'Előnyök', href: '#benefits' },
     { name: 'Kapcsolat', href: '#contact' },
   ];
