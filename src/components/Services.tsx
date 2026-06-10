@@ -1,31 +1,25 @@
 import { motion } from 'framer-motion';
-import { CloudRain, Compass, Cpu, Leaf } from 'lucide-react';
+import { CloudRain, Cpu, Compass } from 'lucide-react';
 import './Services.css';
 
 const services = [
   {
     icon: <CloudRain size={32} />,
-    title: 'Mezőgazdasági esőztetés',
-    description: 'Nagy területű szántóföldek és legelők hatékony öntözése modern körforgó (pivot) és lineáris rendszerekkel, egyenletes vízeloszlással.',
-    features: ['Lineáris & Körforgó rendszerek', 'Csővezetékes öntözés', 'Magas szélállóság']
-  },
-  {
-    icon: <Leaf size={32} />,
-    title: 'Csepegtető öntözőrendszerek',
-    description: 'Célzott vízkijuttatás közvetlenül a növények gyökeréhez. Ideális gyümölcsösökbe, szőlőültetvényekbe és soros zöldségkultúrákba.',
-    features: ['Akár 95%-os vízhasznosulás', 'Tápanyag-kijuttatással (fertigation)', 'Eltömődésmentes csepegtetők']
+    title: 'Körforgó Pivot Rendszerek',
+    description: 'Központi betonalap körül forgó, teljesen automatizált öntözőberendezések. Ideális nagy kiterjedésű, kör alakú szántóföldek rendkívül hatékony és egyenletes vízellátására.',
+    features: ['Automatizált körforgás', 'Akár 100 hektár lefedettség', 'Minimális humán erőforrás igény']
   },
   {
     icon: <Compass size={32} />,
-    title: 'Mikro-szórófejes rendszerek',
-    description: 'Finom permetezésű vízkijuttatás szántóföldi kultúrákhoz és gyümölcsösökbe, ahol a finom cseppképzés és az egyenletes talajnedvesség elengedhetetlen.',
-    features: ['Finom cseppképzés szántóföldön', 'Talajmenti fagyvédelem', 'Mikroklíma szabályozás']
+    title: 'Lineáris Öntözőrendszerek',
+    description: 'Egyenes vonalban, oda-vissza mozgó mechanizált öntözőberendezések, amelyek tökéletesen alkalmazkodnak a négyszögletes vagy szabálytalan alakú szántóföldekhez.',
+    features: ['Négyszögletes területek lefedése', 'Csatornás vagy tömlős víztáplálás', 'Maximális területkihasználás']
   },
   {
     icon: <Cpu size={32} />,
-    title: 'Okos vezérlés & IoT szenzorok',
-    description: 'Automatizálja mezőgazdasági öntözését talajnedvesség-mérők és helyi időjárás-előrejelzések alapján. Vezérelje rendszerét bárhonnan mobilalkalmazással.',
-    features: ['Mobilalkalmazásos elérés', 'Talajnedvesség-alapú indítás', 'Időjárás-követő algoritmusok']
+    title: 'Okos vezérlés & IoT rendszerek',
+    description: 'Intelligens vezérlőrendszerek talajnedvesség-mérők és helyi időjárás-előrejelzések alapján. Felügyelje és vezérelje berendezését bárhonnan mobilalkalmazáson keresztül.',
+    features: ['Mobilalkalmazásos elérés', 'Talajnedvesség-alapú indítás', 'Biztonsági nyomás- és dőlésérzékelés']
   }
 ];
 
