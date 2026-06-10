@@ -1,0 +1,155 @@
+.benefits-section {
+  background-color: var(--clr-bg);
+}
+
+.benefits-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.benefits-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.benefits-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  background: var(--clr-secondary-soft);
+  color: var(--clr-secondary);
+  border: 1px solid rgba(2, 136, 209, 0.15);
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.section-title.text-left {
+  text-align: left;
+  margin-bottom: 24px;
+}
+
+.benefits-pitch {
+  font-size: 1.1rem;
+  color: var(--clr-text-light);
+  margin-bottom: 32px;
+}
+
+.benefits-stat-box {
+  padding: 24px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-left: 5px solid var(--clr-accent);
+  max-width: 480px;
+}
+
+.stat-num {
+  font-size: 2.8rem;
+  font-weight: 800;
+  font-family: var(--font-heading);
+  background: linear-gradient(135deg, var(--clr-accent) 0%, var(--clr-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+}
+
+.stat-text {
+  font-size: 0.9rem;
+  color: var(--clr-text);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* Right grid */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.benefit-item {
+  padding: 30px;
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: var(--transition);
+}
+
+.benefit-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.benefit-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background-color: var(--clr-accent-soft);
+  color: var(--clr-accent);
+}
+
+.benefit-item:nth-child(even) .benefit-icon {
+  background-color: var(--clr-secondary-soft);
+  color: var(--clr-secondary);
+}
+
+.benefit-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--clr-primary);
+}
+
+.benefit-desc {
+  font-size: 0.9rem;
+  color: var(--clr-text-light);
+  line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .benefits-layout {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  
+  .section-title.text-left {
+    text-align: center;
+  }
+  
+  .benefits-info {
+    align-items: center;
+    text-align: center;
+  }
+  
+  .benefits-stat-box {
+    margin: 0 auto;
+  }
+  
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .benefit-item {
+    padding: 24px;
+  }
+}
