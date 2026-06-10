@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Services from './components/Services';
@@ -10,6 +11,16 @@ import Footer from './components/Footer';
 import './App.css';
 
 function App() {
+  const [prefilledMessage, setPrefilledMessage] = useState('');
+
+  const handleQuoteRequest = (message: string) => {
+    setPrefilledMessage(message);
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="app-container">
       <Navbar />
@@ -18,9 +29,9 @@ function App() {
         <Services />
         <OpalPivot />
         <Assembly />
-        <Calculator />
+        <Calculator onQuoteRequest={handleQuoteRequest} />
         <Benefits />
-        <Contact />
+        <Contact prefilledMessage={prefilledMessage} />
       </main>
       <Footer />
     </div>

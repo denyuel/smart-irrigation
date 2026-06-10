@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { RefreshCw, Droplets, Info } from 'lucide-react';
+import { RefreshCw, Droplets, Info, ArrowRight } from 'lucide-react';
 import './Calculator.css';
 
 interface CalculationResult {
@@ -11,7 +11,11 @@ interface CalculationResult {
   tips: string[];
 }
 
-const Calculator = () => {
+interface CalculatorProps {
+  onQuoteRequest: (message: string) => void;
+}
+
+const Calculator = ({ onQuoteRequest }: CalculatorProps) => {
   const [area, setArea] = useState<number>(500);
   const [plantType, setPlantType] = useState<string>('vegetables');
   const [soilType, setSoilType] = useState<string>('loam');
@@ -83,6 +87,23 @@ const Calculator = () => {
     setArea(500);
     setPlantType('vegetables');
     setSoilType('loam');
+  };
+
+  const handleQuoteRequestClick = () => {
+    const plantNames: Record<string, string> = {
+      vegetables: 'Szántóföldi zöldségkultúrák',
+      grains: 'Szántóföldi gabona & kukorica'
+    };
+
+    const soilNames: Record<string, string> = {
+      sandy: 'Homokos talaj (könnyű, laza)',
+      loam: 'Vályogtalaj (közepes, ideális)',
+      clay: 'Agyagos talaj (kötött, nehéz)'
+    };
+
+    const messageText = `Tisztelt Szántóföldi Öntözés! Érdeklődöm a kalkulátorban megadott paraméterek (Terület: ${area} m², Kultúra: ${plantNames[plantType] || plantType}, Talaj: ${soilNames[soilType] || soilType}) szerinti öntözőrendszer megvalósíthatóságával és árával kapcsolatban. Kérem, vegyék fel velem a kapcsolatot.`;
+    
+    onQuoteRequest(messageText);
   };
 
   return (
@@ -200,6 +221,13 @@ const Calculator = () => {
                     ))}
                   </ul>
                 </div>
+
+                <button 
+                  onClick={handleQuoteRequestClick} 
+                  className="btn btn-primary btn-calc-quote"
+                >
+                  Ajánlatkérés a kalkulált adatokkal <ArrowRight size={18} />
+                </button>
               </div>
             )}
           </div>

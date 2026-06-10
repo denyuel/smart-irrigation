@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Phone, Mail, Send, CheckCircle2 } from 'lucide-react';
 import './Contact.css';
 
-const Contact = () => {
+interface ContactProps {
+  prefilledMessage?: string;
+}
+
+const Contact = ({ prefilledMessage }: ContactProps) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -11,6 +15,15 @@ const Contact = () => {
     serviceType: 'agriculture',
     message: ''
   });
+
+  useEffect(() => {
+    if (prefilledMessage) {
+      setFormData(prev => ({
+        ...prev,
+        message: prefilledMessage
+      }));
+    }
+  }, [prefilledMessage]);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 

@@ -261,6 +261,26 @@
   font-weight: bold;
 }
 
+.btn-calc-quote {
+  margin-top: 24px;
+  width: 100%;
+  background: linear-gradient(135deg, var(--clr-accent) 0%, var(--clr-secondary) 100%);
+  color: white;
+  border: none;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(46, 125, 50, 0.2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-calc-quote:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(46, 125, 50, 0.35);
+  filter: brightness(1.08);
+}
+
 /* Responsive adjustments */
 @media (max-width: 992px) {
   .calculator-wrapper {
