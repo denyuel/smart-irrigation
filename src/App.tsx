@@ -1,6 +1,7 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Services from './components/Services';
+import OpalPivot from './components/OpalPivot';
 import Calculator from './components/Calculator';
 import Benefits from './components/Benefits';
 import Contact from './components/Contact';
@@ -14,6 +15,7 @@ function App() {
       <main>
         <Hero />
         <Services />
+        <OpalPivot />
         <Calculator />
         <Benefits />
         <Contact />

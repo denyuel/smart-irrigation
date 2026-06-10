@@ -1,0 +1,172 @@
+.pivot-section {
+  background-color: var(--clr-bg);
+  border-top: 1px solid var(--clr-border);
+  border-bottom: 1px solid var(--clr-border);
+  overflow: hidden;
+}
+
+.pivot-container {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.pivot-image-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.pivot-img-border {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--clr-border);
+}
+
+.pivot-img-actual {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.pivot-img-border:hover .pivot-img-actual {
+  transform: scale(1.03);
+}
+
+.pivot-accent-badge {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: var(--clr-card-bg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--clr-border);
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--clr-accent);
+  box-shadow: var(--shadow-sm);
+}
+
+.pivot-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.pivot-tag {
+  display: inline-block;
+  padding: 6px 16px;
+  background: var(--clr-accent-soft);
+  color: var(--clr-accent);
+  border: 1px solid rgba(46, 125, 50, 0.15);
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.pivot-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+}
+
+.pivot-title span {
+  background: linear-gradient(135deg, var(--clr-accent) 0%, var(--clr-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pivot-description {
+  font-size: 1.05rem;
+  color: var(--clr-text-light);
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.pivot-features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+.pivot-feature-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.pivot-feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background-color: var(--clr-accent-soft);
+  color: var(--clr-accent);
+  flex-shrink: 0;
+  border: 1px solid rgba(46, 125, 50, 0.1);
+}
+
+.pivot-feature-item:nth-child(even) .pivot-feature-icon {
+  background-color: var(--clr-secondary-soft);
+  color: var(--clr-secondary);
+  border: 1px solid rgba(2, 136, 209, 0.1);
+}
+
+.pivot-feature-text h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--clr-primary);
+  margin-bottom: 4px;
+}
+
+.pivot-feature-text p {
+  font-size: 0.88rem;
+  color: var(--clr-text-light);
+  line-height: 1.4;
+}
+
+.pivot-btn {
+  align-self: flex-start;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .pivot-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .pivot-content {
+    align-items: center;
+    text-align: center;
+  }
+  
+  .pivot-btn {
+    align-self: center;
+  }
+  
+  .pivot-feature-item {
+    text-align: left;
+  }
+  
+  .pivot-image-wrapper {
+    max-width: 550px;
+    margin: 0 auto;
+  }
+}
